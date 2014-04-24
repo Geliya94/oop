@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49B3CF0B-261E-470F-BE77-FE9BBB812056}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SystemPharmacy</RootNamespace>
+    <AssemblyName>SystemPharmacy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADD_Files\ADD_algoritm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_algoritm.Designer.cs">
+      <DependentUpon>ADD_algoritm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_card.Designer.cs">
+      <DependentUpon>ADD_card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_Postavchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_Postavchik.Designer.cs">
+      <DependentUpon>ADD_Postavchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_setup.Designer.cs">
+      <DependentUpon>ADD_setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_Preparat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_Preparat.Designer.cs">
+      <DependentUpon>ADD_Preparat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_discount.Designer.cs">
+      <DependentUpon>ADD_discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_group.Designer.cs">
+      <DependentUpon>ADD_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_zakaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_zakaz.Designer.cs">
+      <DependentUpon>ADD_zakaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_preparat_setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_Files\ADD_preparat_setup.Designer.cs">
+      <DependentUpon>ADD_preparat_setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Algoritm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Algoritm.Designer.cs">
+      <DependentUpon>Algoritm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class_Zakupki_Excel.cs" />
+    <Compile Include="DataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Postavchik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Postavchik.Designer.cs">
+      <DependentUpon>Postavchik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Group.Designer.cs">
+      <DependentUpon>Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDBDataSet.cs">
+      <DependentUpon>MyDBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Setup.Designer.cs">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Zakaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\Zakaz.Designer.cs">
+      <DependentUpon>Zakaz.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ADD_Files\ADD_algoritm.resx">
+      <DependentUpon>ADD_algoritm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_card.resx">
+      <DependentUpon>ADD_card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_Postavchik.resx">
+      <DependentUpon>ADD_Postavchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_setup.resx">
+      <DependentUpon>ADD_setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_Preparat.resx">
+      <DependentUpon>ADD_Preparat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_discount.resx">
+      <DependentUpon>ADD_discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_group.resx">
+      <DependentUpon>ADD_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_zakaz.resx">
+      <DependentUpon>ADD_zakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADD_Files\ADD_preparat_setup.resx">
+      <DependentUpon>ADD_preparat_setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Algoritm.resx">
+      <DependentUpon>Algoritm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Postavchik.resx">
+      <DependentUpon>Postavchik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Group.resx">
+      <DependentUpon>Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Classes\Setup.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Zakaz.resx">
+      <DependentUpon>Zakaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="MyDBDataSet.xsc">
+      <DependentUpon>MyDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MyDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyDBDataSet.xss">
+      <DependentUpon>MyDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
