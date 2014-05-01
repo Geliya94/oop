@@ -22,6 +22,8 @@ namespace SystemPharmacy
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.PreparSetDGV". При необходимости она может быть перемещена или удалена.
             this.preparSetDGVTableAdapter.Fill(this.myDBDataSet.PreparSetDGV);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.PreparSetDGV". При необходимости она может быть перемещена или удалена.
+            this.preparSetDGVTableAdapter.Fill(this.myDBDataSet.PreparSetDGV);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Setup". При необходимости она может быть перемещена или удалена.
             this.setupTableAdapter.Fill(this.myDBDataSet.Setup);
         }
@@ -71,15 +73,24 @@ namespace SystemPharmacy
         private void BTN_add1_Click(object sender, EventArgs e)
         {
             ADD_preparat_setup pr = new ADD_preparat_setup();
-            preparSetDGVBindingSource.AddNew();
-            pr.preparatBindingSource.DataSource = preparSetDGVBindingSource;
+           // preparSetDGVBindingSource.AddNew();
+           pr.preparatBindingSource.DataSource = preparSetDGVBindingSource;
             pr.preparatBindingSource.Position = preparSetDGVBindingSource.Position;
             if (pr.ShowDialog() == DialogResult.OK)
             {
-                preparSetDGVTableAdapter.Update(myDBDataSet.PreparSetDGV);
+               preparSetDGVTableAdapter.Update(myDBDataSet.PreparSetDGV);
                 this.preparSetDGVTableAdapter.Fill(this.myDBDataSet.PreparSetDGV);
-          
             }
+            //preparSetDGVBindingSource.AddNew();
+          /*  pr.preparatBindingSource.DataSource = pr.preparatBindingSource1;
+            pr.preparatBindingSource.Position = pr.preparatBindingSource1.Position;
+            if (pr.ShowDialog() == DialogResult.OK)
+            {
+                pr.preparatTableAdapter.Update(this.myDBDataSet.Preparat);
+                pr.preparatTableAdapter.Fill(this.myDBDataSet.Preparat);
+              //  preparSetDGVTableAdapter.Update(myDBDataSet.PreparSetDGV);
+              //  this.preparSetDGVTableAdapter.Fill(this.myDBDataSet.PreparSetDGV);
+            }*/
         }
 
         private void DTN_upd1_Click(object sender, EventArgs e)

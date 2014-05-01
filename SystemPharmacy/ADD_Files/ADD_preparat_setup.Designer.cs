@@ -32,17 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.preparatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.preparatTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.PreparatTableAdapter();
             this.setupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.preparatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.preparatBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.preparatTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.PreparatTableAdapter();
             this.setupTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.SetupTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.setupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.setupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,21 +76,9 @@
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.preparatBindingSource, "Id_preparat", true));
-            this.comboBox1.DataSource = this.preparatBindingSource;
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(259, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.ValueMember = "Id_preparat";
-            // 
             // comboBox2
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.preparatBindingSource, "Id_setup", true));
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.setupBindingSource, "Porog", true));
             this.comboBox2.DataSource = this.setupBindingSource;
             this.comboBox2.DisplayMember = "Porog";
             this.comboBox2.FormattingEnabled = true;
@@ -97,6 +87,16 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 5;
             this.comboBox2.ValueMember = "Id_setup";
+            // 
+            // setupBindingSource
+            // 
+            this.setupBindingSource.DataMember = "Setup";
+            this.setupBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -107,24 +107,31 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "ВЫберите пороговое значение";
             // 
-            // myDBDataSet
+            // comboBox1
             // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.preparatBindingSource, "Id_preparat", true));
+            this.comboBox1.DataSource = this.preparatBindingSource1;
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(259, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.ValueMember = "Id_preparat";
             // 
             // preparatBindingSource
             // 
             this.preparatBindingSource.DataMember = "Preparat";
             this.preparatBindingSource.DataSource = this.myDBDataSet;
             // 
+            // preparatBindingSource1
+            // 
+            this.preparatBindingSource1.DataMember = "Preparat";
+            this.preparatBindingSource1.DataSource = this.myDBDataSet;
+            // 
             // preparatTableAdapter
             // 
             this.preparatTableAdapter.ClearBeforeFill = true;
-            // 
-            // setupBindingSource
-            // 
-            this.setupBindingSource.DataMember = "Setup";
-            this.setupBindingSource.DataSource = this.myDBDataSet;
             // 
             // setupTableAdapter
             // 
@@ -136,9 +143,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 128);
             this.ControlBox = false;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -147,9 +154,10 @@
             this.Text = "ADD_preparat_setup";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ADD_preparat_setup_FormClosing);
             this.Load += new System.EventHandler(this.ADD_preparat_setup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.setupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.setupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,13 +168,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
         private MyDBDataSet myDBDataSet;
-        private MyDBDataSetTableAdapters.PreparatTableAdapter preparatTableAdapter;
-        public System.Windows.Forms.BindingSource preparatBindingSource;
         private System.Windows.Forms.BindingSource setupBindingSource;
         private MyDBDataSetTableAdapters.SetupTableAdapter setupTableAdapter;
+        public System.Windows.Forms.BindingSource preparatBindingSource;
+        public MyDBDataSetTableAdapters.PreparatTableAdapter preparatTableAdapter;
+        public System.Windows.Forms.BindingSource preparatBindingSource1;
     }
 }

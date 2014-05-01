@@ -28,38 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gB2 = new System.Windows.Forms.GroupBox();
             this.BTN_schet = new System.Windows.Forms.Button();
             this.BTN_zakaz = new System.Windows.Forms.Button();
             this.BTN_zakupki = new System.Windows.Forms.Button();
             this.BTN_otchet = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tBSearch = new System.Windows.Forms.TextBox();
-            this.BTN_sale = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.algoritm_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.card_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.setup_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.postavchik_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.group_menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.preparatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.preparatTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.PreparatTableAdapter();
-            this.idpreparatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpostavchikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idsetupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idgroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.srokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preparat_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_sale = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BTN_search = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gB2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gB2
@@ -112,44 +105,12 @@
             this.BTN_otchet.Text = "Сформировать отчет";
             this.BTN_otchet.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpreparatDataGridViewTextBoxColumn,
-            this.idpostavchikDataGridViewTextBoxColumn,
-            this.idsetupDataGridViewTextBoxColumn,
-            this.idgroupDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.srokDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.preparatBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(272, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(664, 241);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // tBSearch
             // 
-            this.tBSearch.Location = new System.Drawing.Point(617, 25);
+            this.tBSearch.Location = new System.Drawing.Point(400, 29);
             this.tBSearch.Name = "tBSearch";
             this.tBSearch.Size = new System.Drawing.Size(132, 20);
             this.tBSearch.TabIndex = 3;
-            // 
-            // BTN_sale
-            // 
-            this.BTN_sale.Location = new System.Drawing.Point(861, 393);
-            this.BTN_sale.Name = "BTN_sale";
-            this.BTN_sale.Size = new System.Drawing.Size(75, 23);
-            this.BTN_sale.TabIndex = 4;
-            this.BTN_sale.Text = "Продать";
-            this.BTN_sale.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -158,7 +119,8 @@
             this.card_menu,
             this.setup_menu,
             this.postavchik_menu,
-            this.group_menu});
+            this.group_menu,
+            this.preparat_menu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(948, 24);
@@ -200,95 +162,104 @@
             this.group_menu.Text = "Группа лекарств";
             this.group_menu.Click += new System.EventHandler(this.group_menu_Click);
             // 
-            // button1
+            // preparat_menu
             // 
-            this.button1.Location = new System.Drawing.Point(534, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.preparat_menu.Name = "preparat_menu";
+            this.preparat_menu.Size = new System.Drawing.Size(191, 20);
+            this.preparat_menu.Text = "Настройка данных о препарате";
+            this.preparat_menu.Click += new System.EventHandler(this.preparat_menu_Click);
             // 
-            // myDBDataSet
+            // button_sale
             // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.button_sale.Location = new System.Drawing.Point(767, 403);
+            this.button_sale.Name = "button_sale";
+            this.button_sale.Size = new System.Drawing.Size(75, 23);
+            this.button_sale.TabIndex = 7;
+            this.button_sale.Text = "SALE";
+            this.button_sale.UseVisualStyleBackColor = true;
             // 
-            // preparatBindingSource
+            // label1
             // 
-            this.preparatBindingSource.DataMember = "Preparat";
-            this.preparatBindingSource.DataSource = this.myDBDataSet;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(269, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Введите препарат";
             // 
-            // preparatTableAdapter
+            // BTN_search
             // 
-            this.preparatTableAdapter.ClearBeforeFill = true;
+            this.BTN_search.Location = new System.Drawing.Point(572, 27);
+            this.BTN_search.Name = "BTN_search";
+            this.BTN_search.Size = new System.Drawing.Size(75, 23);
+            this.BTN_search.TabIndex = 9;
+            this.BTN_search.Text = "Поиск";
+            this.BTN_search.UseVisualStyleBackColor = true;
+            this.BTN_search.Click += new System.EventHandler(this.BTN_search_Click);
             // 
-            // idpreparatDataGridViewTextBoxColumn
+            // button2
             // 
-            this.idpreparatDataGridViewTextBoxColumn.DataPropertyName = "Id_preparat";
-            this.idpreparatDataGridViewTextBoxColumn.HeaderText = "Id_preparat";
-            this.idpreparatDataGridViewTextBoxColumn.Name = "idpreparatDataGridViewTextBoxColumn";
-            this.idpreparatDataGridViewTextBoxColumn.ReadOnly = true;
+            this.button2.Location = new System.Drawing.Point(715, 26);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // idpostavchikDataGridViewTextBoxColumn
+            // comboBox2
             // 
-            this.idpostavchikDataGridViewTextBoxColumn.DataPropertyName = "Id_postavchik";
-            this.idpostavchikDataGridViewTextBoxColumn.HeaderText = "Id_postavchik";
-            this.idpostavchikDataGridViewTextBoxColumn.Name = "idpostavchikDataGridViewTextBoxColumn";
-            this.idpostavchikDataGridViewTextBoxColumn.ReadOnly = true;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(283, 457);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 11;
             // 
-            // idsetupDataGridViewTextBoxColumn
+            // dataGridView2
             // 
-            this.idsetupDataGridViewTextBoxColumn.DataPropertyName = "Id_setup";
-            this.idsetupDataGridViewTextBoxColumn.HeaderText = "Id_setup";
-            this.idsetupDataGridViewTextBoxColumn.Name = "idsetupDataGridViewTextBoxColumn";
-            this.idsetupDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(272, 224);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(664, 164);
+            this.dataGridView2.TabIndex = 12;
             // 
-            // idgroupDataGridViewTextBoxColumn
+            // monthCalendar1
             // 
-            this.idgroupDataGridViewTextBoxColumn.DataPropertyName = "Id_group";
-            this.idgroupDataGridViewTextBoxColumn.HeaderText = "Id_group";
-            this.idgroupDataGridViewTextBoxColumn.Name = "idgroupDataGridViewTextBoxColumn";
-            this.idgroupDataGridViewTextBoxColumn.ReadOnly = true;
+            this.monthCalendar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.monthCalendar1.Location = new System.Drawing.Point(31, 51);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 13;
             // 
-            // nameDataGridViewTextBoxColumn
+            // dataGridView1
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // srokDataGridViewTextBoxColumn
-            // 
-            this.srokDataGridViewTextBoxColumn.DataPropertyName = "Srok";
-            this.srokDataGridViewTextBoxColumn.HeaderText = "Srok";
-            this.srokDataGridViewTextBoxColumn.Name = "srokDataGridViewTextBoxColumn";
-            this.srokDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(272, 55);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(664, 158);
+            this.dataGridView1.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 490);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BTN_sale);
-            this.Controls.Add(this.tBSearch);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BTN_search);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button_sale);
+            this.Controls.Add(this.tBSearch);
             this.Controls.Add(this.gB2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -296,11 +267,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gB2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,27 +283,22 @@
         private System.Windows.Forms.Button BTN_zakaz;
         private System.Windows.Forms.Button BTN_zakupki;
         private System.Windows.Forms.Button BTN_otchet;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox tBSearch;
-        private System.Windows.Forms.Button BTN_sale;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem algoritm_menu;
         private System.Windows.Forms.ToolStripMenuItem card_menu;
         private System.Windows.Forms.ToolStripMenuItem setup_menu;
         private System.Windows.Forms.ToolStripMenuItem postavchik_menu;
         private System.Windows.Forms.ToolStripMenuItem group_menu;
-        private System.Windows.Forms.Button button1;
-        private MyDBDataSet myDBDataSet;
-        private System.Windows.Forms.BindingSource preparatBindingSource;
-        private MyDBDataSetTableAdapters.PreparatTableAdapter preparatTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpreparatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpostavchikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idsetupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idgroupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn srokDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button_sale;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BTN_search;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ToolStripMenuItem preparat_menu;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

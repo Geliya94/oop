@@ -48,7 +48,7 @@ namespace SystemPharmacy
                     if (Convert.ToString((cell_2 = (Excel.Range)worksheet.Cells[i, 6]).Value2) != null)
                     {
                         datt = true;
-                        date = Convert.ToString((cell_2 = (Excel.Range)worksheet.Cells[i, 6]).Value2);
+                     date = Convert.ToString((cell_2 = (Excel.Range)worksheet.Cells[i, 6]).Value2);
                     }
                     i++;
                 }
@@ -64,11 +64,6 @@ namespace SystemPharmacy
                     bd.Update_Preparat(id_prep, Id_postavchik, name, price, kolvo);
 
                 }
-
-
-            
-
-
             file.Close();
             excelapp.Quit();
             return resuly;
@@ -77,17 +72,28 @@ namespace SystemPharmacy
         public int FindPostav(string post)
         {
             string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
-            SqlDataAdapter da = new SqlDataAdapter("Select * from Preparat", s);
-            DataSet ds = new DataSet();
-            da.Fill(ds,"Preparat");
+            DataSet ds = new DataSet(); 
+            SqlDataAdapter da = new SqlDataAdapter("Select * from Postavchik", s);
+            da.Fill(ds,"Postavchik");
             
-            DataTable dt = ds.Tables["Preparat"];
+            DataTable dt = ds.Tables["Postavchik"];
             int id = -1;
-            var q = dt.AsEnumerable().Where(t=>t.Field<string>("id")==post).Select(t=>t);
+            var q = dt.AsEnumerable()
+                .Where(t => t.Field<string>("Name") == post)
+                .Select(t => t);
 
             foreach (var i in q)
             { id = Convert.ToInt32(i); }
             return id;
+           /* string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter("Select * from Discount", s);
+            SqlDataAdapter da1 = new SqlDataAdapter("Select * from Card", s);
+           da.Fill(ds, "Discount");
+            da1.Fill(ds, "Card");
+            DataTable dt = ds.Tables["Discount"];
+           DataTable dt1 = ds.Tables["Card"];
+              MyDBDataSet.AlgoritmRow index = (MyDBDataSet.AlgoritmRow)((DataRowView)algoritmBindingSource.Current).Row;*/
         }
 
     }

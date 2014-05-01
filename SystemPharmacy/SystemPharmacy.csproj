@@ -104,6 +104,12 @@
     <Compile Include="ADD_Files\ADD_preparat_setup.Designer.cs">
       <DependentUpon>ADD_preparat_setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADD_sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_sale.Designer.cs">
+      <DependentUpon>ADD_sale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Algoritm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Preparat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preparat.Designer.cs">
+      <DependentUpon>Preparat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Setup.cs">
@@ -188,6 +200,9 @@
     <EmbeddedResource Include="ADD_Files\ADD_preparat_setup.resx">
       <DependentUpon>ADD_preparat_setup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ADD_sale.resx">
+      <DependentUpon>ADD_sale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Classes\Algoritm.resx">
       <DependentUpon>Algoritm.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Classes\Group.resx">
       <DependentUpon>Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preparat.resx">
+      <DependentUpon>Preparat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

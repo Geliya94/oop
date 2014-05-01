@@ -17,7 +17,15 @@ namespace SystemPharmacy
         }
 
         private void ADD_Preparat_Load(object sender, EventArgs e)
-        {// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Postavchik". При необходимости она может быть перемещена или удалена.
+        {// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Group". При необходимости она может быть перемещена или удалена.
+            this.groupTableAdapter.Fill(this.myDBDataSet.Group);
+// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Setup". При необходимости она может быть перемещена или удалена.
+            this.setupTableAdapter.Fill(this.myDBDataSet.Setup);
+// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Postavchik". При необходимости она может быть перемещена или удалена.
+            this.postavchikTableAdapter.Fill(this.myDBDataSet.Postavchik);
+// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Preparat". При необходимости она может быть перемещена или удалена.
+            this.preparatTableAdapter.Fill(this.myDBDataSet.Preparat);
+// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Postavchik". При необходимости она может быть перемещена или удалена.
             this.postavchikTableAdapter.Fill(this.myDBDataSet.Postavchik);
 // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Preparat". При необходимости она может быть перемещена или удалена.
             this.preparatTableAdapter.Fill(this.myDBDataSet.Preparat);

@@ -50,9 +50,15 @@
             this.preparatTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.PreparatTableAdapter();
             this.postavchikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postavchikTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.PostavchikTableAdapter();
+            this.setupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.setupTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.SetupTableAdapter();
+            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.GroupTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postavchikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.setupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -69,7 +75,9 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DisplayMember = "Id_setup";
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.preparatBindingSource, "Id_setup", true));
+            this.comboBox2.DataSource = this.setupBindingSource;
+            this.comboBox2.DisplayMember = "Porog";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(239, 52);
             this.comboBox2.Name = "comboBox2";
@@ -87,6 +95,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.preparatBindingSource, "Price", true));
             this.textBox3.Location = new System.Drawing.Point(239, 164);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(121, 20);
@@ -177,6 +186,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.preparatBindingSource, "Amount", true));
             this.textBox1.Location = new System.Drawing.Point(239, 203);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
@@ -184,6 +194,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.preparatBindingSource, "Srok", true));
             this.textBox4.Location = new System.Drawing.Point(239, 232);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(121, 20);
@@ -191,7 +202,9 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.DisplayMember = "Id_group";
+            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.preparatBindingSource, "Id_group", true));
+            this.comboBox3.DataSource = this.groupBindingSource;
+            this.comboBox3.DisplayMember = "Name";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(239, 88);
             this.comboBox3.Name = "comboBox3";
@@ -221,6 +234,24 @@
             // postavchikTableAdapter
             // 
             this.postavchikTableAdapter.ClearBeforeFill = true;
+            // 
+            // setupBindingSource
+            // 
+            this.setupBindingSource.DataMember = "Setup";
+            this.setupBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // setupTableAdapter
+            // 
+            this.setupTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupBindingSource
+            // 
+            this.groupBindingSource.DataMember = "Group";
+            this.groupBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // groupTableAdapter
+            // 
+            this.groupTableAdapter.ClearBeforeFill = true;
             // 
             // ADD_Preparat
             // 
@@ -255,6 +286,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.preparatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postavchikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.setupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,8 +313,12 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private MyDBDataSet myDBDataSet;
         private MyDBDataSetTableAdapters.PreparatTableAdapter preparatTableAdapter;
-        public System.Windows.Forms.BindingSource preparatBindingSource;
         private System.Windows.Forms.BindingSource postavchikBindingSource;
         private MyDBDataSetTableAdapters.PostavchikTableAdapter postavchikTableAdapter;
+        private System.Windows.Forms.BindingSource setupBindingSource;
+        private MyDBDataSetTableAdapters.SetupTableAdapter setupTableAdapter;
+        private System.Windows.Forms.BindingSource groupBindingSource;
+        private MyDBDataSetTableAdapters.GroupTableAdapter groupTableAdapter;
+        public System.Windows.Forms.BindingSource preparatBindingSource;
     }
 }
