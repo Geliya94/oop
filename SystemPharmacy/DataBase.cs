@@ -747,7 +747,7 @@ namespace SystemPharmacy
     public partial class Postavchik
     {
         private int Id_postavchik;
-        [Column(IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false, DbType = "int", Storage = "Id_Id_postavchik")]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false, DbType = "int", Storage = "Id_postavchik")]
         public int id_postavchik
         {
             get { return this.Id_postavchik; }

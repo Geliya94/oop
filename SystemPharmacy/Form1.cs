@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
+using System.Data.Linq;
+using System.Data.SqlClient;
 
 namespace SystemPharmacy
 {
@@ -20,6 +22,10 @@ namespace SystemPharmacy
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.NalDGV". При необходимости она может быть перемещена или удалена.
+            this.nalDGVTableAdapter.Fill(this.myDBDataSet.NalDGV);
+           // dataGridView2.AllowUserToAddRows = false;
+           // dataGridView2.AllowUserToDeleteRows = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet1.saleDGV". При необходимости она может быть перемещена или удалена.
            // this.saleDGVTableAdapter.Fill(this.myDBDataSet1.saleDGV);
           //  var c = from i in myDBDataSet.Setup select i;
@@ -133,19 +139,14 @@ namespace SystemPharmacy
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (dataGridView1[4,i].FormattedValue.ToString().Contains(tBSearch.Text.Trim()))
+                if (dataGridView1[2,i].FormattedValue.ToString().Contains(tBSearch.Text.Trim()))
                     {
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                         return;
                     }
             }
         }
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            ADD_sale ads = new ADD_sale();
-            ads.Show();
-        }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
           /*  var c = from i in myDBDataSet.Setup select i;
@@ -160,6 +161,13 @@ namespace SystemPharmacy
         {
             Preparat prep = new Preparat();
             prep.Show();
+        }
+
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ADD_sale ads = new ADD_sale();
+            ads.Owner = this;
+            ads.Show();
         }
 
       

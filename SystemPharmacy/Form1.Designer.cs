@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gB2 = new System.Windows.Forms.GroupBox();
             this.BTN_schet = new System.Windows.Forms.Button();
             this.BTN_zakaz = new System.Windows.Forms.Button();
@@ -49,10 +50,27 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
+            this.nalDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nalDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.NalDGVTableAdapter();
+            this.idpreparatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gROUPNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.gB2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nalDGVBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gB2
@@ -171,7 +189,7 @@
             // 
             // button_sale
             // 
-            this.button_sale.Location = new System.Drawing.Point(767, 403);
+            this.button_sale.Location = new System.Drawing.Point(539, 393);
             this.button_sale.Name = "button_sale";
             this.button_sale.Size = new System.Drawing.Size(75, 23);
             this.button_sale.TabIndex = 7;
@@ -221,6 +239,10 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
             this.dataGridView2.Location = new System.Drawing.Point(272, 224);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -238,19 +260,134 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpreparatDataGridViewTextBoxColumn,
+            this.idgroupDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.gROUPNAMEDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.srokDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.nalDGVBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(272, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(664, 158);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nalDGVBindingSource
+            // 
+            this.nalDGVBindingSource.DataMember = "NalDGV";
+            this.nalDGVBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // nalDGVTableAdapter
+            // 
+            this.nalDGVTableAdapter.ClearBeforeFill = true;
+            // 
+            // idpreparatDataGridViewTextBoxColumn
+            // 
+            this.idpreparatDataGridViewTextBoxColumn.DataPropertyName = "Id_preparat";
+            this.idpreparatDataGridViewTextBoxColumn.HeaderText = "Id_preparat";
+            this.idpreparatDataGridViewTextBoxColumn.Name = "idpreparatDataGridViewTextBoxColumn";
+            this.idpreparatDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpreparatDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idgroupDataGridViewTextBoxColumn
+            // 
+            this.idgroupDataGridViewTextBoxColumn.DataPropertyName = "Id_group";
+            this.idgroupDataGridViewTextBoxColumn.HeaderText = "Id_group";
+            this.idgroupDataGridViewTextBoxColumn.Name = "idgroupDataGridViewTextBoxColumn";
+            this.idgroupDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idgroupDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gROUPNAMEDataGridViewTextBoxColumn
+            // 
+            this.gROUPNAMEDataGridViewTextBoxColumn.DataPropertyName = "GROUPNAME";
+            this.gROUPNAMEDataGridViewTextBoxColumn.HeaderText = "GROUPNAME";
+            this.gROUPNAMEDataGridViewTextBoxColumn.Name = "gROUPNAMEDataGridViewTextBoxColumn";
+            this.gROUPNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // srokDataGridViewTextBoxColumn
+            // 
+            this.srokDataGridViewTextBoxColumn.DataPropertyName = "Srok";
+            this.srokDataGridViewTextBoxColumn.HeaderText = "Srok";
+            this.srokDataGridViewTextBoxColumn.Name = "srokDataGridViewTextBoxColumn";
+            this.srokDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Препарат";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Количество";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.Frozen = true;
+            this.Column3.HeaderText = "Сумма";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(400, 396);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 403);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Введите № карты";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 490);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.dataGridView2);
@@ -271,6 +408,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nalDGVBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,10 +434,25 @@
         private System.Windows.Forms.Button BTN_search;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.ToolStripMenuItem preparat_menu;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDBDataSet myDBDataSet;
+        private System.Windows.Forms.BindingSource nalDGVBindingSource;
+        private MyDBDataSetTableAdapters.NalDGVTableAdapter nalDGVTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpreparatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgroupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gROUPNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srokDataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 
