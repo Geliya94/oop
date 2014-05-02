@@ -67,6 +67,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.BTN_OK = new System.Windows.Forms.Button();
             this.gB2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -230,7 +233,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(283, 457);
+            this.comboBox2.Location = new System.Drawing.Point(635, 457);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 11;
@@ -369,10 +372,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(432, 408);
+            this.textBox1.Location = new System.Drawing.Point(400, 408);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 15;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -386,7 +390,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(269, 391);
+            this.label3.Location = new System.Drawing.Point(269, 378);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 17;
@@ -394,16 +398,45 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(432, 384);
+            this.textBox2.Location = new System.Drawing.Point(400, 375);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(269, 447);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Пересчитанная сумма";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(400, 444);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 20;
+            // 
+            // BTN_OK
+            // 
+            this.BTN_OK.Location = new System.Drawing.Point(520, 408);
+            this.BTN_OK.Name = "BTN_OK";
+            this.BTN_OK.Size = new System.Drawing.Size(75, 23);
+            this.BTN_OK.TabIndex = 21;
+            this.BTN_OK.Text = "OK";
+            this.BTN_OK.UseVisualStyleBackColor = true;
+            this.BTN_OK.Click += new System.EventHandler(this.BTN_OK_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 490);
+            this.Controls.Add(this.BTN_OK);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -475,6 +508,9 @@
         public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button BTN_OK;
     }
 }
 

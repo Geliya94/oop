@@ -24,6 +24,9 @@ namespace SystemPharmacy
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.NalDGV". При необходимости она может быть перемещена или удалена.
             this.nalDGVTableAdapter.Fill(this.myDBDataSet.NalDGV);
+            label4.Visible = false;
+            textBox3.Visible = false;
+            BTN_OK.Visible = false;
            // dataGridView2.AllowUserToAddRows = false;
            // dataGridView2.AllowUserToDeleteRows = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet1.saleDGV". При необходимости она может быть перемещена или удалена.
@@ -168,6 +171,28 @@ namespace SystemPharmacy
             ADD_sale ads = new ADD_sale();
             ads.Owner = this;
             ads.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+            textBox3.Visible = true;
+            BTN_OK.Visible = true;
+        }
+
+        private void BTN_OK_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+            int t = 0;
+            var c = from i in db.Card select i;
+            foreach (var i in c)
+            {
+                if (i.id_card == Convert.ToInt32(textBox1.Text))
+                {
+                    t = i.current_procent;
+                }
+            }
+            textBox3.Text = (Convert.ToDouble(textBox2.Text) - (Convert.ToInt32(textBox2.Text) * t*0.01)).ToString();
         }
 
       

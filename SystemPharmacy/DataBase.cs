@@ -38,8 +38,8 @@ namespace SystemPharmacy
         {
             Card a = new Card();
             a.id_algoritm = id_algoritm;
-            a.summa = save_summa;
-            a.procent = current_procent;
+            a.summa_nakopl = save_summa;
+            a.current_procent = current_procent;
             this.Card.InsertOnSubmit(a);
             this.SubmitChanges();
         }
@@ -513,19 +513,19 @@ namespace SystemPharmacy
             get { return this.Id_algoritm; }
             set { this.Id_algoritm = value; }
         }
-        private float Summa;
-        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "float", Storage = "Summa")]
-        public float summa
+        private float Summa_nakopl;
+        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "float", Storage = "Summa_nakopl")]
+        public float summa_nakopl
         {
-            get { return this.Summa; }
-            set { this.Summa = value; }
+            get { return this.Summa_nakopl; }
+            set { this.Summa_nakopl = value; }
         }
-        private int Procent;
-        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "int", Storage = "Procent")]
-        public int procent
+        private int Current_procent;
+        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "int", Storage = "Current_procent")]
+        public int current_procent
         {
-            get { return this.Procent; }
-            set { this.Procent = value; }
+            get { return this.Current_procent; }
+            set { this.Current_procent = value; }
         }
     }
     [Table]

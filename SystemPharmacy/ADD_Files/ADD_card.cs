@@ -29,20 +29,40 @@ namespace SystemPharmacy
         private void ADD_card_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+                int s = -1;
+                var q = from k in db.Card select k;
+                var c = from i in db.Discount select i;
+                foreach (var k in q)
+                {
+                    foreach (var i in c)
+                    {
+                        if (k.id_algoritm == i.id_algoritm)
+                        {
+                            if (k.summa_nakopl > i.summa)
+                            {
+                                MessageBox.Show(i.procent.ToString());
+                            }
+                        }
+                    }
+                }
+
                 cardBindingSource.EndEdit();
+            }
             else
                 cardBindingSource.CancelEdit();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {/*
-            DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
-            Card ca = this.Owner as Card;
+        {
+           DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+          //  Card ca = this.Owner as Card;
            // float sum = float.Parse(textBox1.Text);
              // int index = ca.dataGridView1.CurrentCell.RowIndex;
-              int sum = 0;
-             // ca.dataGridView1[3, index].Value = sum.ToString();
-              string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+            //  int sum = 9;
+            //  ca.dataGridView1[3, index].Value = sum.ToString();
+             /* string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
               DataSet ds = new DataSet();
               SqlDataAdapter da = new SqlDataAdapter("Select * from Discount", s);
               SqlDataAdapter da1 = new SqlDataAdapter("Select * from Card", s);
@@ -66,7 +86,7 @@ namespace SystemPharmacy
                   var l = from k in db.Discount where k.id_algoritm == i.id_algoritm select k;
               }
             */
-
+       
             
         }
     }
