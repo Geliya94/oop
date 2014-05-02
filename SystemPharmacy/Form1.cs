@@ -27,6 +27,49 @@ namespace SystemPharmacy
             label4.Visible = false;
             textBox3.Visible = false;
             BTN_OK.Visible = false;
+            int count = 0;
+            int count1 = 0;
+            DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+            var c = from i in db.Preparat select i;
+            var d = from j in db.Setup select j;
+            foreach (var i in c)
+            {
+                foreach (var j in d)
+                {
+                    if (i.id_setup == j.id_setup)
+                    {
+                        if ((i.amount < j.porog)||(i.srok<=DateTime.Today))
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                            count1++;
+                         }
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                string message = "Вам необходимо оформить заказ.! Оформить?";
+                string caption = "Что делать?";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Zakaz zakaz = new Zakaz();
+                    this.Hide();
+                    zakaz.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    this.Text = "SystemPharmacy";
+                }
+            }
+            else { if (count1 > 0) { MessageBox.Show("Новые заказы на данный момент не требуется"); } }
+
            // dataGridView2.AllowUserToAddRows = false;
            // dataGridView2.AllowUserToDeleteRows = false;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet1.saleDGV". При необходимости она может быть перемещена или удалена.
@@ -158,6 +201,7 @@ namespace SystemPharmacy
          //       combobox1.Items.Add(i.Porog.ToString());
             }*/
            // dataGridView1.Columns.Add(this.
+         
         }
 
         private void preparat_menu_Click(object sender, EventArgs e)
@@ -193,8 +237,10 @@ namespace SystemPharmacy
                     t = i.current_procent;
                 }
                 else
-                { MessageBox.Show("Данная карта не зарегестрирована в сети аптек"); }
+                { 
+                    MessageBox.Show("Данная карта не зарегестрирована в сети аптек");
                 }
+             }
             
             textBox3.Text = (Convert.ToDouble(textBox2.Text) - (Convert.ToInt32(textBox2.Text) * t*0.01)).ToString();
         }

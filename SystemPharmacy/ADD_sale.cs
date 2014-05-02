@@ -21,7 +21,6 @@ namespace SystemPharmacy
         {
             Form1 f1 = this.Owner as Form1;
             f1.dataGridView2.Rows.Add(1);
-           // if (f1 != null)
             {
                 int index = f1.dataGridView1.CurrentCell.RowIndex;
                 textBox1.Text = f1.dataGridView1[2, index].Value.ToString();
@@ -50,13 +49,6 @@ namespace SystemPharmacy
             for (int i = 0; i < a; i++)
             { summa += Convert.ToInt32(f1.dataGridView2[2, i].Value); }
             f1.textBox2.Text = summa.ToString();
-          /*  int kol = Convert.ToInt32(textBox3.Text);
-            int index = f1.dataGridView1.CurrentCell.RowIndex;
-                if (k > 0)
-                {
-                    textBox2.Text = (kol * Convert.ToInt32(textBox2.Text)).ToString();
-                    f1.dataGridView1[5, index].Value = (Convert.ToInt32(f1.dataGridView1[5, index].Value) - kol).ToString();
-                }*/
         }
         public int k = 0;
         private void textBox3_TextChanged(object sender, EventArgs e)

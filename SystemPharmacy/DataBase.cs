@@ -729,7 +729,7 @@ namespace SystemPharmacy
             set { this.Id_setup = value; }
         }
         private string Name;
-        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "DateTime", Storage = "Name")]
+        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "varchar(50)", Storage = "Name")]
         public string name
         {
             get { return this.Name; }
