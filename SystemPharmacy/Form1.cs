@@ -182,16 +182,20 @@ namespace SystemPharmacy
 
         private void BTN_OK_Click(object sender, EventArgs e)
         {
+            textBox3.Text = "";
             DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
             int t = 0;
             var c = from i in db.Card select i;
-            foreach (var i in c)
+             foreach (var i in c)
             {
                 if (i.id_card == Convert.ToInt32(textBox1.Text))
                 {
                     t = i.current_procent;
                 }
-            }
+                else
+                { MessageBox.Show("Данная карта не зарегестрирована в сети аптек"); }
+                }
+            
             textBox3.Text = (Convert.ToDouble(textBox2.Text) - (Convert.ToInt32(textBox2.Text) * t*0.01)).ToString();
         }
 

@@ -33,14 +33,14 @@
             this.BTN_upd = new System.Windows.Forms.Button();
             this.BTN_del = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cardDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.cardDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.cardDGVTableAdapter();
             this.idcardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idalgoritmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summanakoplDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentprocentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvanieAlgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cardDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
+            this.cardDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.cardDGVTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardDGVBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
@@ -79,7 +79,6 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -95,20 +94,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(448, 189);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // cardDGVBindingSource
-            // 
-            this.cardDGVBindingSource.DataMember = "cardDGV";
-            this.cardDGVBindingSource.DataSource = this.myDBDataSet;
-            // 
-            // myDBDataSet
-            // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cardDGVTableAdapter
-            // 
-            this.cardDGVTableAdapter.ClearBeforeFill = true;
             // 
             // idcardDataGridViewTextBoxColumn
             // 
@@ -145,6 +130,20 @@
             this.nazvanieAlgDataGridViewTextBoxColumn.HeaderText = "NazvanieAlg";
             this.nazvanieAlgDataGridViewTextBoxColumn.Name = "nazvanieAlgDataGridViewTextBoxColumn";
             this.nazvanieAlgDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cardDGVBindingSource
+            // 
+            this.cardDGVBindingSource.DataMember = "cardDGV";
+            this.cardDGVBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cardDGVTableAdapter
+            // 
+            this.cardDGVTableAdapter.ClearBeforeFill = true;
             // 
             // Card
             // 
