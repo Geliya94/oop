@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.Linq;
+using System.Data.SqlClient;
 
 namespace SystemPharmacy
 {
@@ -30,6 +32,42 @@ namespace SystemPharmacy
                 cardBindingSource.EndEdit();
             else
                 cardBindingSource.CancelEdit();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {/*
+            DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+            Card ca = this.Owner as Card;
+           // float sum = float.Parse(textBox1.Text);
+             // int index = ca.dataGridView1.CurrentCell.RowIndex;
+              int sum = 0;
+             // ca.dataGridView1[3, index].Value = sum.ToString();
+              string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+              DataSet ds = new DataSet();
+              SqlDataAdapter da = new SqlDataAdapter("Select * from Discount", s);
+              SqlDataAdapter da1 = new SqlDataAdapter("Select * from Card", s);
+              da.Fill(ds, "Discount");
+              da1.Fill(ds, "Card");
+              DataTable dt = ds.Tables["Discount"];
+              DataTable dt1 = ds.Tables["Card"];
+
+              MyDBDataSet.AlgoritmRow index = (MyDBDataSet.AlgoritmRow)((DataRowView)algoritmBindingSource.Current).Row;
+
+              var q = dt.AsEnumerable()
+                  .Where(t => t.Field<int>("Id_algoritm") == index.Id_algoritm)
+                  .Select(t => t);
+              var w = dt1.AsEnumerable()
+                  .Where(p => p.Field<int>("Id_algoritm") == index.Id_algoritm)
+                  .Select(p => p);
+
+              var c = from i in db.Card select i ;
+              foreach (var i in c)
+              {
+                  var l = from k in db.Discount where k.id_algoritm == i.id_algoritm select k;
+              }
+            */
+
+            
         }
     }
 }

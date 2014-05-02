@@ -48,11 +48,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.nalDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nalDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.NalDGVTableAdapter();
             this.idpreparatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idgroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,17 +60,19 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.srokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nalDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
+            this.nalDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.NalDGVTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.gB2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nalDGVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // gB2
@@ -189,7 +191,7 @@
             // 
             // button_sale
             // 
-            this.button_sale.Location = new System.Drawing.Point(539, 393);
+            this.button_sale.Location = new System.Drawing.Point(622, 412);
             this.button_sale.Name = "button_sale";
             this.button_sale.Size = new System.Drawing.Size(75, 23);
             this.button_sale.TabIndex = 7;
@@ -246,8 +248,29 @@
             this.dataGridView2.Location = new System.Drawing.Point(272, 224);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(664, 164);
+            this.dataGridView2.Size = new System.Drawing.Size(664, 138);
             this.dataGridView2.TabIndex = 12;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Препарат";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Количество";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.Frozen = true;
+            this.Column3.HeaderText = "Сумма";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // monthCalendar1
             // 
@@ -278,20 +301,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(664, 158);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
-            // 
-            // myDBDataSet
-            // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nalDGVBindingSource
-            // 
-            this.nalDGVBindingSource.DataMember = "NalDGV";
-            this.nalDGVBindingSource.DataSource = this.myDBDataSet;
-            // 
-            // nalDGVTableAdapter
-            // 
-            this.nalDGVTableAdapter.ClearBeforeFill = true;
             // 
             // idpreparatDataGridViewTextBoxColumn
             // 
@@ -344,30 +353,23 @@
             this.srokDataGridViewTextBoxColumn.Name = "srokDataGridViewTextBoxColumn";
             this.srokDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Column1
+            // nalDGVBindingSource
             // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "Препарат";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.nalDGVBindingSource.DataMember = "NalDGV";
+            this.nalDGVBindingSource.DataSource = this.myDBDataSet;
             // 
-            // Column2
+            // myDBDataSet
             // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Количество";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Column3
+            // nalDGVTableAdapter
             // 
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "Сумма";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.nalDGVTableAdapter.ClearBeforeFill = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(400, 396);
+            this.textBox1.Location = new System.Drawing.Point(432, 408);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 15;
@@ -375,17 +377,35 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 403);
+            this.label2.Location = new System.Drawing.Point(269, 415);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Введите № карты";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(269, 391);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Сумма ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(432, 384);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 18;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 490);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
@@ -408,8 +428,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nalDGVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,6 +473,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBox2;
     }
 }
 

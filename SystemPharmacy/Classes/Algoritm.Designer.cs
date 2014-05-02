@@ -35,18 +35,18 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BTN_add = new System.Windows.Forms.Button();
-            this.BTN_upd = new System.Windows.Forms.Button();
-            this.BTN_del = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idalgoritmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvanieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.algoritmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.algoritmTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.AlgoritmTableAdapter();
+            this.BTN_add = new System.Windows.Forms.Button();
+            this.BTN_upd = new System.Windows.Forms.Button();
+            this.BTN_del = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.discountDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.algoritmTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.AlgoritmTableAdapter();
             this.discountDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.DiscountDGVTableAdapter();
             this.nazvanieAlgoritmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iddiscountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +56,10 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.algoritmBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountDGVBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,6 +135,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(551, 232);
             this.dataGridView1.TabIndex = 0;
             // 
+            // idalgoritmDataGridViewTextBoxColumn
+            // 
+            this.idalgoritmDataGridViewTextBoxColumn.DataPropertyName = "Id_algoritm";
+            this.idalgoritmDataGridViewTextBoxColumn.HeaderText = "Id_algoritm";
+            this.idalgoritmDataGridViewTextBoxColumn.Name = "idalgoritmDataGridViewTextBoxColumn";
+            this.idalgoritmDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazvanieDataGridViewTextBoxColumn
+            // 
+            this.nazvanieDataGridViewTextBoxColumn.DataPropertyName = "Nazvanie";
+            this.nazvanieDataGridViewTextBoxColumn.HeaderText = "Nazvanie";
+            this.nazvanieDataGridViewTextBoxColumn.Name = "nazvanieDataGridViewTextBoxColumn";
+            this.nazvanieDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // algoritmBindingSource
+            // 
+            this.algoritmBindingSource.DataMember = "Algoritm";
+            this.algoritmBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // BTN_add
             // 
             this.BTN_add.Location = new System.Drawing.Point(247, 238);
@@ -199,45 +230,14 @@
             this.dataGridView2.Size = new System.Drawing.Size(545, 225);
             this.dataGridView2.TabIndex = 0;
             // 
-            // idalgoritmDataGridViewTextBoxColumn
-            // 
-            this.idalgoritmDataGridViewTextBoxColumn.DataPropertyName = "Id_algoritm";
-            this.idalgoritmDataGridViewTextBoxColumn.HeaderText = "Id_algoritm";
-            this.idalgoritmDataGridViewTextBoxColumn.Name = "idalgoritmDataGridViewTextBoxColumn";
-            this.idalgoritmDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazvanieDataGridViewTextBoxColumn
-            // 
-            this.nazvanieDataGridViewTextBoxColumn.DataPropertyName = "Nazvanie";
-            this.nazvanieDataGridViewTextBoxColumn.HeaderText = "Nazvanie";
-            this.nazvanieDataGridViewTextBoxColumn.Name = "nazvanieDataGridViewTextBoxColumn";
-            this.nazvanieDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // algoritmBindingSource
-            // 
-            this.algoritmBindingSource.DataMember = "Algoritm";
-            this.algoritmBindingSource.DataSource = this.myDBDataSet;
-            // 
-            // myDBDataSet
-            // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // algoritmTableAdapter
-            // 
-            this.algoritmTableAdapter.ClearBeforeFill = true;
-            // 
             // discountDGVBindingSource
             // 
             this.discountDGVBindingSource.DataMember = "DiscountDGV";
             this.discountDGVBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // algoritmTableAdapter
+            // 
+            this.algoritmTableAdapter.ClearBeforeFill = true;
             // 
             // discountDGVTableAdapter
             // 
@@ -256,6 +256,7 @@
             this.iddiscountDataGridViewTextBoxColumn.HeaderText = "Id_discount";
             this.iddiscountDataGridViewTextBoxColumn.Name = "iddiscountDataGridViewTextBoxColumn";
             this.iddiscountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iddiscountDataGridViewTextBoxColumn.Visible = false;
             // 
             // idalgoritmDataGridViewTextBoxColumn1
             // 
@@ -263,6 +264,7 @@
             this.idalgoritmDataGridViewTextBoxColumn1.HeaderText = "Id_algoritm";
             this.idalgoritmDataGridViewTextBoxColumn1.Name = "idalgoritmDataGridViewTextBoxColumn1";
             this.idalgoritmDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idalgoritmDataGridViewTextBoxColumn1.Visible = false;
             // 
             // summaDataGridViewTextBoxColumn
             // 
@@ -290,10 +292,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.algoritmBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.discountDGVBindingSource)).EndInit();
             this.ResumeLayout(false);
 

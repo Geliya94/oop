@@ -33,8 +33,8 @@
             this.BTN_upd = new System.Windows.Forms.Button();
             this.BTN_del = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
             this.cardDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
             this.cardDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.cardDGVTableAdapter();
             this.idcardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idalgoritmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +42,8 @@
             this.currentprocentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazvanieAlgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardDGVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // BTN_add
@@ -96,15 +96,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(448, 189);
             this.dataGridView1.TabIndex = 4;
             // 
-            // myDBDataSet
-            // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cardDGVBindingSource
             // 
             this.cardDGVBindingSource.DataMember = "cardDGV";
             this.cardDGVBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cardDGVTableAdapter
             // 
@@ -123,6 +123,7 @@
             this.idalgoritmDataGridViewTextBoxColumn.HeaderText = "Id_algoritm";
             this.idalgoritmDataGridViewTextBoxColumn.Name = "idalgoritmDataGridViewTextBoxColumn";
             this.idalgoritmDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idalgoritmDataGridViewTextBoxColumn.Visible = false;
             // 
             // summanakoplDataGridViewTextBoxColumn
             // 
@@ -159,8 +160,8 @@
             this.Text = "Card";
             this.Load += new System.EventHandler(this.Card_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardDGVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,10 +171,10 @@
         private System.Windows.Forms.Button BTN_add;
         private System.Windows.Forms.Button BTN_upd;
         private System.Windows.Forms.Button BTN_del;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private MyDBDataSet myDBDataSet;
         private System.Windows.Forms.BindingSource cardDGVBindingSource;
         private MyDBDataSetTableAdapters.cardDGVTableAdapter cardDGVTableAdapter;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idalgoritmDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn summanakoplDataGridViewTextBoxColumn;

@@ -32,16 +32,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
+            this.algoritmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.cardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cardTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.CardTableAdapter();
-            this.algoritmBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.algoritmTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.AlgoritmTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.algoritmBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,21 @@
             this.comboBox1.TabIndex = 2;
             this.comboBox1.ValueMember = "Id_algoritm";
             // 
+            // cardBindingSource
+            // 
+            this.cardBindingSource.DataMember = "Card";
+            this.cardBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // algoritmBindingSource
+            // 
+            this.algoritmBindingSource.DataMember = "Algoritm";
+            this.algoritmBindingSource.DataSource = this.myDBDataSet;
+            // 
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cardBindingSource, "Summa_nakopl", true));
@@ -84,6 +99,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -103,24 +119,9 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Накопленная сумма";
             // 
-            // myDBDataSet
-            // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cardBindingSource
-            // 
-            this.cardBindingSource.DataMember = "Card";
-            this.cardBindingSource.DataSource = this.myDBDataSet;
-            // 
             // cardTableAdapter
             // 
             this.cardTableAdapter.ClearBeforeFill = true;
-            // 
-            // algoritmBindingSource
-            // 
-            this.algoritmBindingSource.DataMember = "Algoritm";
-            this.algoritmBindingSource.DataSource = this.myDBDataSet;
             // 
             // algoritmTableAdapter
             // 
@@ -145,8 +146,8 @@
             this.Text = "ADD_card";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ADD_card_FormClosing);
             this.Load += new System.EventHandler(this.ADD_card_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.algoritmBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

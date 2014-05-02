@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.Linq;
+using System.Data.SqlClient;
 
 namespace SystemPharmacy
 {
@@ -25,6 +27,7 @@ namespace SystemPharmacy
         private void BTN_add_Click(object sender, EventArgs e)
         {
             ADD_card sv = new ADD_card();
+            sv.Owner = this;
             cardDGVBindingSource.AddNew();
             sv.cardBindingSource.DataSource = cardDGVBindingSource;
             sv.cardBindingSource.Position = cardDGVBindingSource.Position;
