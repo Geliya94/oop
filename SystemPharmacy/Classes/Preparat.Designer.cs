@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
-            this.preparatDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.preparatDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.preparatDGVTableAdapter();
             this.idpreparatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pOSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +41,15 @@
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.srokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sETUPPOROgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preparatDGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
+            this.preparatDGVTableAdapter = new SystemPharmacy.MyDBDataSetTableAdapters.preparatDGVTableAdapter();
             this.BTN_ADD = new System.Windows.Forms.Button();
             this.BTN_UPD = new System.Windows.Forms.Button();
             this.BTN_DEL = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.preparatDGVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -77,20 +77,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(763, 166);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // myDBDataSet
-            // 
-            this.myDBDataSet.DataSetName = "MyDBDataSet";
-            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // preparatDGVBindingSource
-            // 
-            this.preparatDGVBindingSource.DataMember = "preparatDGV";
-            this.preparatDGVBindingSource.DataSource = this.myDBDataSet;
-            // 
-            // preparatDGVTableAdapter
-            // 
-            this.preparatDGVTableAdapter.ClearBeforeFill = true;
             // 
             // idpreparatDataGridViewTextBoxColumn
             // 
@@ -172,6 +158,20 @@
             this.sETUPPOROgDataGridViewTextBoxColumn.Name = "sETUPPOROgDataGridViewTextBoxColumn";
             this.sETUPPOROgDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // preparatDGVBindingSource
+            // 
+            this.preparatDGVBindingSource.DataMember = "preparatDGV";
+            this.preparatDGVBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // preparatDGVTableAdapter
+            // 
+            this.preparatDGVTableAdapter.ClearBeforeFill = true;
+            // 
             // BTN_ADD
             // 
             this.BTN_ADD.Location = new System.Drawing.Point(12, 197);
@@ -213,17 +213,18 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Preparat";
             this.Text = "Preparat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Preparat_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Preparat_FormClosed);
             this.Load += new System.EventHandler(this.Preparat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.preparatDGVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private MyDBDataSet myDBDataSet;
         private System.Windows.Forms.BindingSource preparatDGVBindingSource;
         private MyDBDataSetTableAdapters.preparatDGVTableAdapter preparatDGVTableAdapter;
@@ -241,5 +242,6 @@
         private System.Windows.Forms.Button BTN_ADD;
         private System.Windows.Forms.Button BTN_UPD;
         private System.Windows.Forms.Button BTN_DEL;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

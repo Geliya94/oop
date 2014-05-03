@@ -68,7 +68,10 @@ namespace SystemPharmacy
                     this.Text = "SystemPharmacy";
                 }
             }
-            else { if (count1 > 0) { MessageBox.Show("Новые заказы на данный момент не требуется"); } }
+            else { 
+                if (count1 > 0)
+            { MessageBox.Show("Новые заказы на данный момент не требуется"); }
+            }
 
            // dataGridView2.AllowUserToAddRows = false;
            // dataGridView2.AllowUserToDeleteRows = false;
@@ -215,6 +218,7 @@ namespace SystemPharmacy
             ADD_sale ads = new ADD_sale();
             ads.Owner = this;
             ads.Show();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -229,20 +233,54 @@ namespace SystemPharmacy
             textBox3.Text = "";
             DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
             int t = 0;
+            int count = 0;
             var c = from i in db.Card select i;
              foreach (var i in c)
             {
                 if (i.id_card == Convert.ToInt32(textBox1.Text))
                 {
                     t = i.current_procent;
+                    count++;
                 }
-                else
+                
+             }
+            if(count==0)
                 { 
                     MessageBox.Show("Данная карта не зарегестрирована в сети аптек");
                 }
-             }
-            
             textBox3.Text = (Convert.ToDouble(textBox2.Text) - (Convert.ToInt32(textBox2.Text) * t*0.01)).ToString();
+            int a = dataGridView2.RowCount;
+            for (int i = 0; i < a; i++)
+            { dataGridView2[3, i].Value = (Convert.ToInt32(dataGridView2[2, i].Value) - ((Convert.ToInt32(dataGridView2[2, i].Value)) * t * 0.01)).ToString(); }
+
+        }
+
+        private void button_sale_Click_1(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase(@"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True");
+            int a = dataGridView2.RowCount;
+            for (int i = 0; i < a; i++)
+            {
+                int str2 = 0;
+                var c = from j in db.Preparat select j;
+                foreach (var j in c)
+                {
+                    if (j.name == dataGridView2[0,i].Value.ToString())
+                    { 
+                        str2 = j.id_preparat;
+                    }
+                     
+                }
+                int str = Convert.ToInt32(dataGridView2[1, i].Value);
+                float str1 = Convert.ToSingle(dataGridView2[3, i].Value);
+              db.ADD_Sale(str2, str, DateTime.Today, str1);
+            }
+            MessageBox.Show("Продажа успешно совершена !");
+            dataGridView2.Rows.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+           
         }
 
       

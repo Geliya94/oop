@@ -54,5 +54,18 @@ namespace SystemPharmacy
             preparatDGVBindingSource.EndEdit();
             this.preparatDGVTableAdapter.Fill(this.myDBDataSet.preparatDGV);
         }
+
+        private void Preparat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 f = new Form1();
+            f.nalDGVTableAdapter.Fill(this.myDBDataSet.NalDGV);
+        }
+
+        private void Preparat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 f = new Form1();
+            f.nalDGVTableAdapter.Fill(this.myDBDataSet.NalDGV);
+            f.nalDGVTableAdapter.Update(this.myDBDataSet.NalDGV);
+        }
     }
 }

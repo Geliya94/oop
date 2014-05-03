@@ -20,19 +20,18 @@ namespace SystemPharmacy
         private void ADD_sale_Load(object sender, EventArgs e)
         {
             Form1 f1 = this.Owner as Form1;
+            int index = f1.dataGridView1.CurrentCell.RowIndex;
             f1.dataGridView2.Rows.Add(1);
-            {
-                int index = f1.dataGridView1.CurrentCell.RowIndex;
-                textBox1.Text = f1.dataGridView1[2, index].Value.ToString();
+             textBox1.Text = f1.dataGridView1[2, index].Value.ToString();
                 textBox2.Text = f1.dataGridView1[4, index].Value.ToString();
-            }
+            
         }
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             Form1 f1 = this.Owner as Form1;
             int a = f1.dataGridView2.RowCount;
             int summa=0;
-            if (f1.dataGridView2[0, 0].Value == null)
+          if (f1.dataGridView2[0, 0].Value == null)
             {
                 f1.dataGridView2[0, 0].Value = textBox1.Text;
                 f1.dataGridView2[1, 0].Value = textBox3.Text;
@@ -46,17 +45,24 @@ namespace SystemPharmacy
                 f1.dataGridView2[2, a-1].Value = textBox2.Text;
                 this.Close();
             }
-            for (int i = 0; i < a; i++)
+           for (int i = 0; i < a; i++)
             { summa += Convert.ToInt32(f1.dataGridView2[2, i].Value); }
             f1.textBox2.Text = summa.ToString();
         }
         public int k = 0;
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            Preparat pr = new Preparat();
             Form1 f1 = this.Owner as Form1;
             int index = f1.dataGridView1.CurrentCell.RowIndex;
             int est = Convert.ToInt32(f1.dataGridView1[5, index].Value);
+          //  int kol=0;
+         //   try
+        //    { 
             int kol = Convert.ToInt32(textBox3.Text);
+            //}
+           // catch { MessageBox.Show("Будьте осторожны!Неправильный формат данных."); }
+          //  MessageBox.Show(kol.ToString());
             if (est < kol) 
             { MessageBox.Show("Указанного количества нет в наличии"); }
             else
@@ -64,12 +70,17 @@ namespace SystemPharmacy
                 k++;
                 textBox2.Text = (kol * Convert.ToInt32(textBox2.Text)).ToString();
                f1.dataGridView1[5, index].Value = (Convert.ToInt32(f1.dataGridView1[5, index].Value) - kol).ToString();
+               f1.nalDGVBindingSource.EndEdit();
+
             }
+            f1.nalDGVBindingSource.EndEdit();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

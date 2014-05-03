@@ -104,10 +104,10 @@
     <Compile Include="ADD_Files\ADD_preparat_setup.Designer.cs">
       <DependentUpon>ADD_preparat_setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADD_sale.cs">
+    <Compile Include="ADD_Files\ADD_sale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ADD_sale.Designer.cs">
+    <Compile Include="ADD_Files\ADD_sale.Designer.cs">
       <DependentUpon>ADD_sale.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Algoritm.cs">
@@ -123,7 +123,7 @@
       <DependentUpon>Card.cs</DependentUpon>
     </Compile>
     <Compile Include="Class_Zakupki_Excel.cs" />
-    <Compile Include="DataBase.cs">
+    <Compile Include="Classes\DataBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.cs">
@@ -153,10 +153,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Preparat.cs">
+    <Compile Include="Classes\Preparat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preparat.Designer.cs">
+    <Compile Include="Classes\Preparat.Designer.cs">
       <DependentUpon>Preparat.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -200,7 +200,7 @@
     <EmbeddedResource Include="ADD_Files\ADD_preparat_setup.resx">
       <DependentUpon>ADD_preparat_setup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ADD_sale.resx">
+    <EmbeddedResource Include="ADD_Files\ADD_sale.resx">
       <DependentUpon>ADD_sale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Classes\Algoritm.resx">
@@ -218,7 +218,7 @@
     <EmbeddedResource Include="Classes\Group.resx">
       <DependentUpon>Group.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preparat.resx">
+    <EmbeddedResource Include="Classes\Preparat.resx">
       <DependentUpon>Preparat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

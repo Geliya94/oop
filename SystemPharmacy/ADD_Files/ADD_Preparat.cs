@@ -33,13 +33,16 @@ namespace SystemPharmacy
 
         private void ADD_Preparat_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Form1 f = new Form1();
             if (DialogResult == DialogResult.OK)
             {
                 preparatBindingSource.EndEdit();
+                f.nalDGVBindingSource.EndEdit();
             }
             else
             {
                 preparatBindingSource.CancelEdit();
+                f.nalDGVBindingSource.CancelEdit();
             }
         }
     }

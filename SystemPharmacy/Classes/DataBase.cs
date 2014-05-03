@@ -105,7 +105,7 @@ namespace SystemPharmacy
         {
             Sale a = new Sale();
             a.id_preparat = id_preparat;
-            a.kolvo = amount;
+            a.amount = amount;
             a.date = date;
             a.summa = summa;
             this.Sale.InsertOnSubmit(a);
@@ -696,12 +696,12 @@ namespace SystemPharmacy
             set { this.Id_preparat = value; }
         }
        
-        private int Kolvo;
-        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "int", Storage = "Kolvo")]
-        public int kolvo
+        private int Amount;
+        [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "int", Storage = "Amount")]
+        public int amount
         {
-            get { return this.Kolvo; }
-            set { this.Kolvo = value; }
+            get { return this.Amount; }
+            set { this.Amount = value; }
         }
         private DateTime Date;
         [Column(IsPrimaryKey = false, IsDbGenerated = false, CanBeNull = true, DbType = "DateTime", Storage = "Date")]
