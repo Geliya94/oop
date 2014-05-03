@@ -26,7 +26,7 @@ namespace SystemPharmacy
 
         private void BTN_del_Click(object sender, EventArgs e)
         {
-            string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\user\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+            string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\эльвира\Documents\GitHub\oop\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter("Select * from Preparat", s);
             da.Fill(ds, "Preparat");

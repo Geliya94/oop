@@ -34,6 +34,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="cli_basetypes, Version=1.0.10.0, Culture=neutral, PublicKeyToken=ce2cb7e279207b9e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\cli_basetypes.dll</HintPath>
+    </Reference>
+    <Reference Include="cli_cppuhelper, Version=1.0.13.0, Culture=neutral, PublicKeyToken=ce2cb7e279207b9e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\cli_cppuhelper.dll</HintPath>
+    </Reference>
+    <Reference Include="cli_types, Version=1.1.13.0, Culture=neutral, PublicKeyToken=ce2cb7e279207b9e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\cli_types.dll</HintPath>
+    </Reference>
+    <Reference Include="cli_ure, Version=1.0.13.0, Culture=neutral, PublicKeyToken=ce2cb7e279207b9e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\cli_ure.dll</HintPath>
+    </Reference>
     <Reference Include="DataBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DataBase.dll</HintPath>

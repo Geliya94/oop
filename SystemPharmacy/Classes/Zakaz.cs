@@ -12,6 +12,17 @@ using iTextSharp.text;
 using iTextSharp;
 using iTextSharp.text.pdf;
 
+using unoidl.com.sun.star.lang;
+using unoidl.com.sun.star.uno;
+using unoidl.com.sun.star.bridge;
+using unoidl.com.sun.star.frame;
+using unoidl.com.sun.star.text;
+using unoidl.com.sun.star.sheet;
+using unoidl.com.sun.star.table;
+using unoidl.com.sun.star.util;
+using unoidl.com.sun.star.beans;
+using unoidl.com.sun.star.container;
+
 namespace SystemPharmacy
 {
     public partial class Zakaz : Form
@@ -50,10 +61,10 @@ namespace SystemPharmacy
 
         private void BTN_del_Click(object sender, EventArgs e)
         {
-            //if (this.dataGridView1.SelectedRows.Count > 0)
-            //{
-             //   this.dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
-           // }
+            if (this.dataGridView1.SelectedRows.Count > 0)
+            {
+                this.dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+           }
             
         }
 
@@ -171,7 +182,10 @@ namespace SystemPharmacy
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            XComponentContext localContext = uno.util.Bootstrap.bootstrap();
+            XMultiServiceFactory multiServiceFactory = (XMultiServiceFactory)localContext.getServiceManager();
+            XComponentLoader componentLoader = (XComponentLoader)multiServiceFactory.createInstance("com.sun.star.frame.Desktop");
+            XComponent xComponent = componentLoader.loadComponentFromURL(
         }
     }
 }
