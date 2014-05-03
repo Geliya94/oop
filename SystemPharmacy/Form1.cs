@@ -283,11 +283,15 @@ namespace SystemPharmacy
            
         }
 
+<<<<<<< HEAD
         private void BTN_schet_Click(object sender, EventArgs e)
         {
             Form2 f = new Form2();
             f.Show();
         }
+=======
+        
+>>>>>>> c023bdc68849223757e44ca24839a0a4f0519b9a
 
       
     }

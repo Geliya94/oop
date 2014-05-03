@@ -120,6 +120,7 @@
             this.BTN_zakupki.TabIndex = 6;
             this.BTN_zakupki.Text = "Загрузить закупки";
             this.BTN_zakupki.UseVisualStyleBackColor = true;
+            
             // 
             // BTN_otchet
             // 
