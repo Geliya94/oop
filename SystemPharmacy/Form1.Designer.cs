@@ -48,6 +48,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.myDBDataSet = new SystemPharmacy.MyDBDataSet();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -67,10 +71,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.BTN_OK = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gB2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -100,6 +100,7 @@
             this.BTN_schet.TabIndex = 8;
             this.BTN_schet.Text = "Сформировать счета";
             this.BTN_schet.UseVisualStyleBackColor = true;
+            this.BTN_schet.Click += new System.EventHandler(this.BTN_schet_Click);
             // 
             // BTN_zakaz
             // 
@@ -257,6 +258,31 @@
             this.dataGridView2.Size = new System.Drawing.Size(664, 138);
             this.dataGridView2.TabIndex = 12;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Препарат";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Количество";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Сумма";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Пересч.сумма";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
             // myDBDataSet
             // 
             this.myDBDataSet.DataSetName = "MyDBDataSet";
@@ -410,31 +436,6 @@
             this.BTN_OK.Text = "OK";
             this.BTN_OK.UseVisualStyleBackColor = true;
             this.BTN_OK.Click += new System.EventHandler(this.BTN_OK_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Препарат";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Количество";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Сумма";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Пересч.сумма";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
             // 
             // Form1
             // 

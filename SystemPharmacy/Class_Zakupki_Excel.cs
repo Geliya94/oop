@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.SqlClient;
 using System.Data.Linq;
 using System.Data;
@@ -12,8 +12,10 @@ namespace SystemPharmacy
 {
     public class Class_Zakupki_Excel
     {
-        public int Zakupki(string pathodb, string pathoffile)
+      public int Zakupki(string pathodb, string pathoffile)
         {
+            int resuly = 0;
+          /*
             string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\MyDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
             SqlDataAdapter da = new SqlDataAdapter("Select * from Preparat", s);
           //  MyDBDataSet ds = new MyDBDataSet();
@@ -66,6 +68,7 @@ namespace SystemPharmacy
                 }
             file.Close();
             excelapp.Quit();
+            return resuly;*/
             return resuly;
  
         }

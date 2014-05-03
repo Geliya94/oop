@@ -19,7 +19,8 @@ namespace SystemPharmacy
         }
 
         private void Algoritm_Load(object sender, EventArgs e)
-        {// TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.DiscountDGV". При необходимости она может быть перемещена или удалена.
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.DiscountDGV". При необходимости она может быть перемещена или удалена.
             this.discountDGVTableAdapter.Fill(this.myDBDataSet.DiscountDGV);
 // TODO: данная строка кода позволяет загрузить данные в таблицу "myDBDataSet.Algoritm". При необходимости она может быть перемещена или удалена.
             this.algoritmTableAdapter.Fill(this.myDBDataSet.Algoritm);

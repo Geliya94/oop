@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 using System.Data.Linq;
 using System.Data.SqlClient;
@@ -281,6 +281,12 @@ namespace SystemPharmacy
             textBox2.Clear();
             textBox3.Clear();
            
+        }
+
+        private void BTN_schet_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
         }
 
       
