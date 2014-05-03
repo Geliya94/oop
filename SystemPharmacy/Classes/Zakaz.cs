@@ -50,10 +50,10 @@ namespace SystemPharmacy
 
         private void BTN_del_Click(object sender, EventArgs e)
         {
-            if (this.dataGridView1.SelectedRows.Count > 0)
-            {
-                this.dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
-            }
+            //if (this.dataGridView1.SelectedRows.Count > 0)
+            //{
+             //   this.dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+           // }
             
         }
 
